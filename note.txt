@@ -1,0 +1,46 @@
+>>>> Dockerfile without docker compose <<<<
+
+how to build the image from Dockerfile
+
+    docker build -t flask-app .
+
+how to run with docker and and connenct the .env
+
+    sudo docker run --env-file .env -p 5000:5000 flask-app
+
+how to stop the running docker image
+
+    sudo docker stop flask-app
+
+
+>>>> Dockerfile with docker compose <<<<<< (the recommmended way)
+
+how to run with docker compose
+
+    sudo docker-compose up --build -d
+
+how to stop the running docker compose
+
+    sudo docker-compose down
+
+>>>> push to docker hub <<<<<
+
+how to tag docker image
+
+    docker tag <image-name>:<tag> <docker-hub-username>/<repo-name>:<tag>
+
+how to push docker image
+
+    docker push <docker-hub-username>/<repo-name>:<tag>
+
+how to pull docker image
+
+    docker pull <docker-hub-username>/<repo-name>:<tag>
+
+>>>> for automated build and push to docker hub , check out the github actions <<<<
+
+
+
+
+
+

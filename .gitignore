@@ -1,0 +1,47 @@
+# Python-related files
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.pdb
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Configuration files
+*.env
+instance/
+*.cfg
+*.ini
+
+# But don't ignore .env.example
+!.env.example
+
+# IDE files
+.idea/
+.vscode/
+
+# Logs and debug files
+*.log
+*.sqlite3
+
+# Cache files
+*.cache
+.cache/
+*.egg-info/
+dist/
+build/
+*.pytest_cache/
+
+# Docker-related files
+.dockerignore
+
+# Test artifacts
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+nosetests.xml
+pytestdebug.log
