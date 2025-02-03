@@ -8,6 +8,11 @@ run in minikube :
 
     minikube service flask-app-service
 
+stop everything in minikube :
+
+    kubectl delete -f '*.yaml'
+    minikube stop
+
 update the latest container :
 
     if the deployment points to :latest tag, and want to get latest update with :latest tag from the dockerhub.
@@ -18,4 +23,4 @@ use HPA :
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
     kubectl apply -f hpa.yaml
 
-    if we have hpa, we delete the replicas in deployment, the pods number automatically scales up or down by hpa.
+    if we have hpa for autoscale, we delete the replicas in deployment, the pods number automatically scales up or down by hpa.

@@ -15,6 +15,7 @@ venv/
 instance/
 *.cfg
 *.ini
+/flask-app/*.env
 
 # But don't ignore .env.example
 !.env.example
