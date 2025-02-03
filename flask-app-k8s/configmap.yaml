@@ -5,4 +5,3 @@ metadata:
 data:
   FLASK_ENV: "production"
   DEBUG: "false"
-  DATABASE_URL: "postgres://user:password@hostname:5432/dbname"

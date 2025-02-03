@@ -12,7 +12,6 @@ app = Flask(__name__)
 FLASK_ENV = os.getenv('FLASK_ENV', 'development')  # Default to 'development' if not set
 DEBUG = os.getenv('DEBUG', 'false').lower() == 'true'  # Convert to boolean
 DATABASE_URL = os.getenv('DATABASE_URL')
-DB_PASSWORD = os.getenv('DB_PASSWORD')
 API_KEY = os.getenv('API_KEY')
 
 @app.route("/")
@@ -22,7 +21,7 @@ def home():
     container_ip = socket.gethostbyname(socket.gethostname())
     return f"""Connected to database: {DATABASE_URL}.
     Container IP: {container_ip}.
-    FLASK_ENV: {FLASK_ENV},DEBUG: {DEBUG}, DB_PASSWORD: {DB_PASSWORD}, API_KEY: {API_KEY}"""
+    FLASK_ENV: {FLASK_ENV},DEBUG: {DEBUG}, API_KEY: {API_KEY}"""
 
 @app.route("/kitten")
 def kitten():
