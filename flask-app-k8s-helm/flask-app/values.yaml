@@ -1,0 +1,36 @@
+# Default namespace for all resources
+namespace: default
+
+image:
+  repository: risqiikhsani/simple-flask
+  tag: latest
+
+service:
+  port: 80
+  targetPort: 5000
+  type: LoadBalancer
+
+resources: {}
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # limits:
+  #   cpu: 200m
+  #   memory: 256Mi
+
+configMap:
+  data:
+    FLASK_ENV: "production"
+    DEBUG: "false"
+
+# Warning: Do not store sensitive values in values.yaml
+# Use --set-string or a separate secure values file
+# secret:
+#   dbPassword: ""  # Set with --set-string secret.dbPassword=password
+#   apiKey: ""      # Set with --set-string secret.apiKey=api_key
+#   databaseUrl: "" # Set with --set-string secret.databaseUrl=postgres://user:password@hostname:5432/dbname
+
+autoscaling:
+  minReplicas: 5
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50

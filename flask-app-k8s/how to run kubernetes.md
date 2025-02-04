@@ -23,4 +23,11 @@ use HPA :
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
     kubectl apply -f hpa.yaml
 
+    or
+
+    helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+    helm repo update
+    helm install metrics-server metrics-server/metrics-server
+
+
     if we have hpa for autoscale, we delete the replicas in deployment, the pods number automatically scales up or down by hpa.
